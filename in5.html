@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>休憩島|指令教學</title>
+    <link rel="stylesheet" href="teach.css">
+</head>
+
+<body>
+     <header>
+     <h3>休憩島 Relaxation-island</h3>
+    <div class='mil-nav-containar'>
+     <div class="mil-menu-btn">
+      <span></span>
+     </div>
+    <ul class="mil-navigation">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="Community.html">社群準則</a></li>
+        <li><a href="Instruction.html">指令教學</a></li>
+        <li><a href="Staff.html">團隊成員</a></li>
+    </ul>
+    </nav>
+    </div>
+    
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $(".mil-menu-btn").on("click", function() {
+      $(this).toggleClass('mil-active');
+      $('.mil-navigation').toggleClass('mil-active');
+    });
+  });
+  
+</script>
+</header>
+
+<main>
+<div class="in">
+    <h2>家園功能</h2>
+    <p>📗為了方便玩家遊玩，我們建立住宅與傳送系統。</p>
+    <hr style="width:100%; margin-top:10px; color:white">
+    <h5>家園傳送系統</h5>
+    <p>- 指令: /sethome 設定家</p>
+    <p>- /home 傳送到家</p>
+    <p>- /edithome 編輯家</p>
+    <p>- /tpa (玩家) 傳送到(玩家)請求</p>
+    <p>- /tpaccept 傳送同意</p>
+    <p>- /tpadeny 傳送不同意</p>
+    <p>- /back 回到上一個位置</p>
+    <p>- /spawn 回到重生點</p>
+    <p>- /homelist 查看所有自己的家</p>
+    <p>- /delhome 刪除家</p>
+    <p>- /phome 傳送到公開家</p>
+    <p>- /phomelist 查看所有公開家</p>
+    <p>- /warp 傳送到伺服器地標</p>
+    <p>- /warplist 查看所有地標</p>
+    <p>- /tpahere (玩家) 請求玩家傳送到自己</p>
+     <hr style="width:100%; margin-top:10px; color:white">
+    <p><a href="Instruction.html">點擊返回目錄</a></p>
+    
+</div>
+</main>
+
+ <footer>
+     <p>© 2025 休憩島 Relaxation-island. All rights reserved.</p>
+ </footer>
+</body>
+</html>

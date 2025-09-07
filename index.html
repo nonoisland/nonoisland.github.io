@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>休憩島|Relaxation-island</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="new.css">
+    <script src="script.js"></script>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#2a7f2f">
+
+</head>
+<body>
+  <header>
+     <h3>休憩島 Relaxation-island</h3>
+    <div class='mil-nav-containar'>
+     <div class="mil-menu-btn">
+      <span></span>
+     </div>
+    <ul class="mil-navigation">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="Community.html">社群準則</a></li>
+        <li><a href="Instruction.html">指令教學</a></li>
+        <li><a href="Staff.html">團隊成員</a></li>
+    </ul>
+    </nav>
+    </div>
+    
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $(".mil-menu-btn").on("click", function() {
+      $(this).toggleClass('mil-active');
+      $('.mil-navigation').toggleClass('mil-active');
+    });
+  });
+</script>
+ </header>
+
+ <main>
+        <section class="aboutme">
+        <div class="www">
+        <h3>休憩島是一個專注於建築體驗的Minecraft伺服器</h3>
+        <h3>致力於為玩家打造一個方便且愉快的生存建築環境</h3>
+        <p>無論你是資深建築師還是新手玩家，休憩島都歡迎你的加入，一同享受創作的樂趣</p>
+        <hr style="width:240px; margin-top:10px; color:white">
+        <p><a href="https://discord.gg/KE8Z44pyF5">點擊加入我們的Discord</a></p>
+        </div>
+      </section>
+
+  <section class="introduce">
+    <h4>詳細介紹</h4>
+     <p class="v1">我們提供完善且低價的官方商店，讓玩家能夠輕鬆購買建築材料，縮短收集資源的時間，讓你能更專注於創造夢想中的建築。</p> 
+     <hr style="width:100%; margin-top:10px; color:white">
+     <div class="sa">
+      <div class="sa1">
+        <h5 class="sa2">▼ 材料零壓力！</h5>
+        <p class="sa2">- 官方商店提供木材、石材甚至更多裝飾方塊，可使用低價遊戲幣購買！</p>
+        <p class="sa2">- 資源收集時間減少80%，建築效率最大化，同時不失去生存獨特玩法！</p>
+      </div>
+      <hr style="width:100%; margin-top:10px; color:white">
+    <div class="sa">
+      <div class="sa1"> 
+        <h5 class="sa2">▼ 悠閒小社群</h5>
+        <p class="sa2">- 可在群組分享你的建築！讓你的設計成為「島嶼地標」</p>
+        <p class="sa2">- 你的建築還有可能被選取上載至社交專業！</p>
+      </div>
+      <hr style="width:100%; margin-top:10px; color:white">
+     <div class="sa">
+      <div class="sa1">
+        <h5 class="sa2">▼ 24小時舒適遊玩環境</h5>
+        <p class="sa2">- 反作弊 ！</p>
+        <p class="sa2">- 自動備份功能！</p>
+        <p class="sa2">- 十分詳細的指令教學！</p>
+      </div>
+ </section>
+
+  <section class="new">
+  <div class="news-container">
+    <h3 class="news-title">最新消息</h3>
+    <div class="news-list">
+      <div class="news-item">
+        <span class="news-date">2025-05-01</span>
+        <span class="news-tag">公告</span>
+        <p class="news-content">伺服器正在籌備中!</p>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2025-05-10</span>
+        <span class="news-tag">公告</span>
+        <p class="news-content">小無名出沒！</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      const newsList = document.querySelector('.news-list');
+      newsList.innerHTML += `
+        <div class="news-item">
+          <span class="news-date">2025-05-23</span>
+          <span class="news-tag">更新</span>
+          <p class="news-content">新增網頁，快去看看吧！</p>
+        </div>
+      `;
+    }, 2000);
+
+  </script>
+  </section>
+ </main>
+
+ <footer>
+     <p>© 2025 休憩島 Relaxation-island. All rights reserved.</p>
+ </footer>
+</body>
+</html>
