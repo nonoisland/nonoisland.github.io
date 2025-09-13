@@ -159,7 +159,7 @@ header a{
 }
 
 .in img {
-            width: 10em;
+            width: 20em;
             height: auto;
             object-fit: cover;
             animation: fadeIn 1s ease-in forwards;
@@ -218,6 +218,12 @@ footer {
         transform: translateX(-50%);
             line-height: 1;
     }
+    .in img {
+            width: 10em;
+            height: auto;
+            object-fit: cover;
+            animation: fadeIn 1s ease-in forwards;
+        }
    
 /* 漢堡按鈕 - 默認隱藏 */
         .mil-menu-btn {
