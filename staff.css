@@ -97,7 +97,7 @@ header a{
 .staff-container {
     font-family: '微軟正黑體', Arial, sans-serif;
     width: auto;
-    background-color: #dcdcdc;
+    background-color: #f6f6f6;
     color: rgb(82, 82, 82);
     height: auto;
     display: flex;
@@ -236,19 +236,7 @@ footer {
     padding: 2rem;
 }
 
- header{
-    height: 30px;
-    max-width: 100%;
-    position:relative;
-    opacity: 1;
-    top: 0;         /* 贴顶 */
-    left: 0;        /* 贴左 */
-    width: 100%;    /* 占满宽度 */
-    background: #333;
-    color: white;
-    padding: 15px;
-    z-index: 1000;  /* 确保导航栏在最上层 */
-} 
+
     .aboutus h4{
         font-size: 15px;
     }
