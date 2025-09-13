@@ -225,6 +225,20 @@ footer {
             animation: fadeIn 1s ease-in forwards;
         }
    
+ header{
+    height: 30px;
+    max-width: 100%;
+    position:relative;
+    opacity: 1;
+    top: 0;         /* 贴顶 */
+    left: 0;        /* 贴左 */
+    width: 100%;    /* 占满宽度 */
+    background: #333;
+    color: white;
+    padding: 15px;
+    z-index: 1000;  /* 确保导航栏在最上层 */
+} 
+
 /* 漢堡按鈕 - 默認隱藏 */
         .mil-menu-btn {
             display: none;
