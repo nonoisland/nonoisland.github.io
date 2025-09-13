@@ -264,15 +264,14 @@ footer {
 
 
 .Community{
-    max-width: 100%;
+    max-width: auto;
     background-color: #dcdcdc;
     color: rgb(82, 82, 82);
-    height: 110vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-items: center;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     font-family: 'Noto Sans TC', sans-serif;
@@ -308,15 +307,14 @@ footer {
 }
 
 .in{
-    max-width: 100%;
+    max-width: auto;
     background-color: #fafafa;
     color: rgb(72, 72, 72);
-    height: 110vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-items: center;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     font-family: 'Noto Sans TC', sans-serif;
@@ -386,7 +384,7 @@ footer {
     }
 .www h3 {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 15px;
     margin-top: 15px;
     animation: fadeIn 2s ease-in forwards;
 }
@@ -394,7 +392,7 @@ footer {
 
 .www p {
     color: #ffffff;
-    font-size: 10px;
+    font-size: 8px;
     margin-top: 20px;
     animation: fadeIn 2s ease-in forwards;
 }
@@ -409,6 +407,20 @@ footer {
     animation: fadeIn 2s ease-in forwards;
 }
 
+
+  header{
+    height: 30px;
+    max-width: 100%;
+    position:relative;
+    opacity: 1;
+    top: 0;         /* 贴顶 */
+    left: 0;        /* 贴左 */
+    width: 100%;    /* 占满宽度 */
+    background: #333;
+    color: white;
+    padding: 15px;
+    z-index: 1000;  /* 确保导航栏在最上层 */
+} 
 /* 漢堡按鈕 - 默認隱藏 */
         .mil-menu-btn {
             display: none;
@@ -575,23 +587,4 @@ footer {
             }
         }
         
-        /* 桌面端顯示常規導航 - 這個媒體查詢應該在外面，不能嵌套 */
-        @media (min-width: 769px) {
-            .mil-menu-btn {
-                display: none;
-            }
-            
-            .mil-navigation {
-                position: static;
-                opacity: 1;
-                max-height: none;
-                overflow: visible;
-                background: transparent;
-                box-shadow: none;
-                display: none; /* 桌面端使用常規導航，隱藏這個 */
-            }
-            
-            .desktop-nav {
-                display: flex;
-            }
-        }
+  

@@ -28,18 +28,18 @@
         <li><a href="Instruction.html">指令教學</a></li>
         <li><a href="Staff.html">團隊成員</a></li>
     </ul>
-    </nav>
     </div>
     
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(document).ready(function() {
-    $(".mil-menu-btn").on("click", function() {
-      $(this).toggleClass('mil-active');
-      $('.mil-navigation').toggleClass('mil-active');
+    $(".mil-menu-btn").on("click", function () {
+        $(this).toggleClass('mil-active');
+        $('.mil-navigation').toggleClass('mil-active');
     });
-  });
+});
 </script>
+
  </header>
 
  <main>
@@ -85,6 +85,11 @@
     <h3 class="news-title">最新消息</h3>
     <div class="news-list">
       <div class="news-item">
+        <span class="news-date">2025-09-13</span>
+        <span class="news-tag">公告</span>
+        <p class="news-content">伺服器將於9月15日5:00開服!</p>
+      </div>
+      <div class="news-item">
         <span class="news-date">2025-05-01</span>
         <span class="news-tag">公告</span>
         <p class="news-content">伺服器正在籌備中!</p>
@@ -109,6 +114,7 @@
       `;
     }, 2000);
 
+    
   </script>
   </section>
  </main>
