@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>休憩島|指令教學</title>
+    <link rel="stylesheet" href="teach.css">
+
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+     <header>
+     <h3>休憩島 Relaxation-island</h3>
+    <div class='mil-nav-containar'>
+     <div class="mil-menu-btn">
+      <span></span>
+     </div>
+    <ul class="mil-navigation">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="Community.html">社群準則</a></li>
+        <li><a href="Instruction.html">指令教學</a></li>
+        <li><a href="Staff.html">團隊成員</a></li>
+    </ul>
+    </nav>
+    </div>
+    
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $(".mil-menu-btn").on("click", function() {
+      $(this).toggleClass('mil-active');
+      $('.mil-navigation').toggleClass('mil-active');
+    });
+  });
+  
+</script>
+</header>
+
+<main>
+<div class="in">
+    <h2>經濟系統</h2>
+    <p>📗為了方便玩家，我們建立了經濟系統</p>
+    <hr style="width:100%; margin-top:10px; color:white">
+    <h5>1. 生物掉錢系統</h5>
+    <p>擊殺生物獲得休憩幣，休憩幣將會直接進入錢包。</p>
+    <p>每分鐘最多掉錢20次</p>
+    <p>只有自然生成的生物會掉錢（不包括生怪磚、生怪蛋、分裂的史萊姆、幼體生物）</p>
+    <h5>2. 生物掉錢概述</h5>
+    <h5>動物類（掉錢機率20-25%）:</h5>
+    <p>- 雞、豬、羊、牛: 2.0-4.0 休憩幣</p>
+    <p>- 犰狳、哞菇、鸚鵡、魷魚、蝙蝠、貓、貓熊: 2.0-4.0 休憩幣</p>
+    <p>- 馬、驢、騾、羊駝、狐狸、兔子、烏龜、蜜蜂、山羊、螢光魷魚、六角恐龍: 1.0-3.0 休憩幣</p>
+    <p>- 魚類（鱈魚、鮭魚、河豚、熱帶魚）: 1.0-3.0 休憩幣</p>
+    <p>- 北極熊、海豚、狼、駱駝、嗅探獸: 1.0-10.0 休憩幣</p>
+    <h5>敵對生物（掉錢機率15-25%）:</h5>
+    <p>- 殭屍、蜘蛛、洞穴蜘蛛、骷髏、苦力怕: 2.0-4.0 休憩幣</p>
+    <p>- 溺屍: 1.0-3.0 休憩幣（18%機率）</p>
+    <p>- 流浪、屍殼、旋風怪、沼澤屍殼: 5.0-10.0 休憩幣</p>
+    <p>- 女巫、幻翼: 1.0-10.0 休憩幣</p>
+    <p>- 史萊姆、守衛者: 0.0-1.0 休憩幣（15%機率）</p>
+    <p>- 遠古守衛者: 10.0-25.0 休憩幣（100%機率）</p>
+    <h5>村民與災厄村民 :</h5>
+    <p>- 村民、流浪商人、悅靈: 1.0-10.0 休憩幣</p>
+    <p>- 災厄村民（衛道士、喚魔者、掠奪者、劫掠獸、惱鬼）: 1.0-10.0 休憩幣</p>
+    <p>- 鐵傀儡: 0.0-1.0 休憩幣（15%機率）</p>
+    <h5>地獄生物 :</h5>
+    <p>- 豬布林、豬布林蠻兵、殭屍豬布林、豬獸、豬屍獸、地獄幽靈:  3.0-10.0 休憩幣</p>
+    <p>- 凋零骷髏: 2.0-10.0 休憩幣（25%機率）</p>
+    <p>- 岩漿怪: 2.0-10.0 休憩幣（25%機率）</p>
+    <p>- 烈焰怪: 2.0-10.0 休憩幣（25%機率）</p>
+    <p>- 熾足獸: 1.0-10.0 休憩幣</p>
+    <h5>終界生物 :</h5>
+    <p>- 終界人: 0.0-1.0 休憩幣（10%機率）</p>
+    <p>- 終界蟎: 1.0-10.0 休憩幣</p>
+    <p>- 潛影貝: 1.0-10.0 休憩幣</p>
+    <h5>BOSS（100%掉錢機率）:</h5>
+    <p>- 終界龍: 100.0-200.0 休憩幣</p>
+    <p>- 凋零: 50.0-100.0 休憩幣</p>
+    <p>- 伏守者: 75.0-150.0 休憩幣</p>
+    <h5>3. 指令:</h5>
+    <p>- /mfmmute - 切換是否顯示拾取金錢訊息</p>
+     <hr style="width:100%; margin-top:10px; color:white">
+    <p><a href="Instruction.html">點擊返回目錄</a></p>
+  </section>
+</main>
+
+ <footer>
+     <p>© 2025 休憩島 Relaxation-island. All rights reserved.</p>
+ </footer>
+</body>
+</html>
