@@ -266,6 +266,26 @@ tr:hover {
     border-radius: 3px;
 }
 
+h4 {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: #3c3e41;
+    text-align: left;
+}
+
+h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(to bottom, #4b6cb7, #90a0c2);
+    border-radius: 3px;
+}
 /* 響應式設計語法 */
 @media screen and (max-width: 768px) {
     header ul {
