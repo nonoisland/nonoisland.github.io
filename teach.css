@@ -203,6 +203,68 @@ footer {
     display: none;
 }
 
+table {
+    border-collapse: collapse;
+    font-family: system-ui;
+    width: 100%;
+    margin: 15px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+table caption { 
+    margin-block: 1rlh; 
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    text-align: left;
+}
+
+td, th {
+    border-style: solid;
+    padding: 12px 15px;
+    text-align: center; /* 改为居中 */
+    font-size: 18px;
+    line-height: 1.8;
+    border: 1px solid #4d4d4d; /* 细边框 */
+    vertical-align: middle; /* 垂直居中 */
+}
+
+th {
+    background-color: #707070;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #e8f4fc;
+    transition: background-color 0.2s;
+}
+
+.decorated-caption {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #3c3e41;
+    text-align: left;
+}
+
+.decorated-caption::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(to bottom, #4b6cb7, #90a0c2);
+    border-radius: 3px;
+}
 
 /* 響應式設計語法 */
 @media screen and (max-width: 768px) {
