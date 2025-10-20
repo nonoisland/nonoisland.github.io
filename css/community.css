@@ -1,0 +1,179 @@
+/* 社群準則頁面專用樣式 */
+.rules-hero {
+    background: url('image/community.png') no-repeat center center/cover;
+    color: white;
+    padding: 150px 0 80px;
+    text-align: center;
+}
+
+.rules-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.rules-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.rules-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.rules-section {
+    margin-bottom: 60px;
+}
+
+.rules-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.rules-title .icon {
+    background: var(--primary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 1.5rem;
+}
+
+.rules-title h2 {
+    font-size: 2rem;
+    margin: 0;
+    position: relative;
+}
+
+.rules-title h2::before {
+    content: '▎';
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+.rule-item {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--box-shadow);
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.rule-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.rule-number {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 0.9rem;
+}
+
+.rule-content h3 {
+    display: inline;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+}
+
+.rule-content p {
+    margin-top: 15px;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.important-note {
+    background: #fff9e6;
+    border: 1px solid #ffd166;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.important-note::before {
+    content: '!';
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    background: #ffd166;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.important-note h3 {
+    color: #e6a700;
+    margin-bottom: 10px;
+}
+
+.report-section {
+    background: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.report-section h3 {
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.report-section p {
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .rules-hero {
+        padding: 120px 0 60px;
+    }
+    
+    .rules-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .rules-title h2 {
+        font-size: 1.6rem;
+    }
+    
+    .rule-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .rules-container {
+        padding: 50px 15px;
+    }
+}

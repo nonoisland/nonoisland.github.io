@@ -1,0 +1,656 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #80acc6;
+    --secondary-color: #FF6B8B;
+    --accent-color: #4ECDC4;
+    --light-color: #F8F9FA;
+    --dark-color: #2D3748;
+    --text-color: #4A5568;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--dark-color);
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5a4ab5;
+    transform: translateY(-2px);
+}
+
+/* 導航欄 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    padding: 12px 0;
+    transition: var(--transition);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 8px;
+    font-size: 1.3rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--dark-color);
+    padding: 6px 0;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    border-radius: var(--border-radius);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: var(--transition);
+    padding: 8px 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 8px 15px;
+    color: var(--text-color);
+    font-size: 0.85rem;
+}
+
+.dropdown-content a:hover {
+    background: rgba(106, 90, 205, 0.05);
+    color: var(--primary-color);
+}
+
+.dropdown-content a i {
+    margin-right: 8px;
+    width: 16px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+}
+
+/* 教學內頁面主視覺 */
+.tutorial-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: 120px 0 50px;
+    text-align: center;
+}
+
+.tutorial-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.tutorial-hero p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.breadcrumb a:hover {
+    color: white;
+}
+
+.breadcrumb span {
+    margin: 0 8px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 教學內容區域 */
+.tutorial-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 15px;
+    gap: 25px;
+}
+
+.tutorial-sidebar {
+    flex: 0 0 250px;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    height: fit-content;
+    position: sticky;
+    top: 90px;
+    border: 1px solid #e2e8f0;
+}
+
+.tutorial-sidebar h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--dark-color);
+}
+
+.tutorial-nav {
+    list-style: none;
+}
+
+.tutorial-nav li {
+    margin-bottom: 8px;
+}
+
+.tutorial-nav a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: var(--text-color);
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+    font-size: 0.9rem;
+}
+
+.tutorial-nav a:hover, .tutorial-nav a.active {
+    background: rgba(128, 172, 198, 0.1);
+    color: var(--primary-color);
+    border-left: 3px solid var(--primary-color);
+}
+
+.tutorial-content {
+    flex: 1;
+}
+
+.tutorial-section {
+    margin-bottom: 40px;
+    scroll-margin-top: 90px;
+}
+
+.tutorial-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tutorial-section h2 i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* 教學內容樣式 - 去除方格設計 */
+.step-container {
+    counter-reset: step-counter;
+}
+
+.step-item {
+    position: relative;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.step-item:last-child {
+    border-bottom: none;
+}
+
+.step-item:before {
+    counter-increment: step-counter;
+    content: "步驟 " counter(step-counter);
+    position: absolute;
+    top: 20px;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.step-content {
+    padding-left: 90px;
+}
+
+.step-content h3 {
+    margin-bottom: 12px;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+.step-content p {
+    margin-bottom: 12px;
+}
+
+.step-image {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.step-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.step-image figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.code-block {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: monospace;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.code-block code {
+    display: block;
+}
+
+.note-box {
+    background: #fff9e6;
+    border-left: 4px solid #ffd166;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.note-box h3 {
+    color: #e6a700;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.tip-box {
+    background: #e6fffa;
+    border-left: 4px solid #4ECDC4;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.tip-box h3 {
+    color: #2c7a7b;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.command-reference {
+    margin: 20px 0;
+}
+
+.command-reference h3 {
+    margin-bottom: 15px;
+    color: var(--dark-color);
+    font-size: 1.2rem;
+}
+
+.command-item {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.command-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.command-name {
+    flex: 0 0 180px;
+    font-family: monospace;
+    background: var(--dark-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.command-desc {
+    flex: 1;
+    padding-left: 15px;
+}
+
+/* 相關教學區塊 */
+.related-tutorials {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.related-tutorials h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.tutorial-list {
+    list-style: none;
+}
+
+.tutorial-list li {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.tutorial-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.tutorial-list a {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.tutorial-list a:hover {
+    color: var(--primary-color);
+}
+
+.tutorial-list a i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+/* 頁尾 */
+footer {
+    background: var(--dark-color);
+    color: white;
+    padding: 50px 0 15px;
+    font-size: 0.85rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #CBD5E0;
+    transition: var(--transition);
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: white;
+    padding-left: 3px;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #A0AEC0;
+    font-size: 0.8rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 992px) {
+    .tutorial-container {
+        flex-direction: column;
+    }
+    
+    .tutorial-sidebar {
+        position: static;
+        flex: 1;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .tutorial-hero {
+        padding: 100px 0 40px;
+    }
+    
+    .tutorial-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tutorial-sidebar {
+        padding: 15px;
+    }
+    
+    .step-content {
+        padding-left: 0;
+        padding-top: 30px;
+    }
+    
+    .step-item:before {
+        top: 20px;
+        left: 0;
+    }
+    
+    .command-item {
+        flex-direction: column;
+    }
+    
+    .command-name {
+        flex: 1;
+        margin-bottom: 10px;
+    }
+    
+    .command-desc {
+        padding-left: 0;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
