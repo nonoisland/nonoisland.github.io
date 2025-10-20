@@ -1,0 +1,67 @@
+            <!-- 相關指令 -->
+            <section id="commands" class="tutorial-section">
+                <h2><i class="fas fa-terminal"></i> 相關指令</h2>
+                
+                <div class="command-reference">
+                    <h3>驗證相關指令列表</h3>
+                    
+                    <div class="command-item">
+                        <div class="command-name">/register [密碼] [確認密碼]</div>
+                        <div class="command-desc">
+                            <p>註冊新帳號。首次進入伺服器時必須使用此指令。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="command-item">
+                        <div class="command-name">/login [密碼]</div>
+                        <div class="command-desc">
+                            <p>登入您的帳號。每次進入伺服器時可能需要使用。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="command-item">
+                        <div class="command-name">/changepassword [舊密碼] [新密碼]</div>
+                        <div class="command-desc">
+                            <p>更改您的帳號密碼。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="command-item">
+                        <div class="command-name">/logout</div>
+                        <div class="command-desc">
+                            <p>登出您的帳號。這將使您需要重新登入才能進行某些操作。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 疑難排解 -->
+            <section id="troubleshoot" class="tutorial-section">
+                <h2><i class="fas fa-tools"></i> 疑難排解</h2>
+                
+                <div class="step-container">
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h3>常見問題與解決方法</h3>
+                            
+                            <h4 style="margin-top: 20px; margin-bottom: 10px;">問題：忘記密碼</h4>
+                            <p>如果您忘記了密碼，請聯繫伺服器管理員協助重置。</p>
+                            
+                            <h4 style="margin-top: 20px; margin-bottom: 10px;">問題：驗證失敗</h4>
+                            <p>如果驗證持續失敗，請檢查：</p>
+                            <ul style="margin-left: 20px; margin-bottom: 15px;">
+                                <li>密碼是否符合要求（至少6位，包含字母和數字）</li>
+                                <li>網路連接是否穩定</li>
+                                <li>是否已正確輸入指令格式</li>
+                            </ul>
+                            
+                            <h4 style="margin-top: 20px; margin-bottom: 10px;">問題：無法收到驗證訊息</h4>
+                            <p>如果您沒有收到驗證提示，請嘗試：</p>
+                            <ul style="margin-left: 20px; margin-bottom: 15px;">
+                                <li>重新連接伺服器</li>
+                                <li>檢查聊天設定是否隱藏了系統訊息</li>
+                                <li>聯繫管理員尋求幫助</li>
+                            </ul>
+                        </div>
+                    </div>
+                    

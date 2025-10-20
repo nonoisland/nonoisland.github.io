@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品展示 | 休憩島</title>
+    <link rel="stylesheet" href="css/Gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="imagelogo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagelogo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imagelogo/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+
+</head>
+<body>
+    <!-- 導航欄 -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-island-tropical"></i>
+                休憩島
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="Community.html">社群準則</a></li>
+                <li><a href="Instruction.html">指令教學</a></li>
+                <li class="dropdown">
+                    <a href="#">其他<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="Staff.html"><i class="fas fa-crown"></i> 管理團隊</a>
+                        <a href="Support.html"><i class="fas fa-hand-holding-usd"></i> 贊助我們</a>
+                        <a href="Shop.html"><i class="fas fa-store"></i> 商店宣傳</a>
+                    </div>
+                </li>
+                <li><a href="Gallery.html" class="active">作品展示</a></li>
+                <li id="admin-login-container">
+                    <!-- 管理員登入按鈕將由JavaScript動態添加 -->
+                </li>
+            </ul>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- 管理員登入模態框 -->
+    <div id="admin-login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">管理員登入</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="admin-password">管理員密碼</label>
+                    <input type="password" id="admin-password" placeholder="請輸入管理員密碼">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="admin-login-submit" class="btn btn-primary">登入</button>
+                <button class="btn btn-outline close-modal">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 作品展示頁面主視覺 -->
+    <section class="gallery-hero">
+        <div class="container">
+            <h1>▎玩家作品展示</h1>
+            <p>欣賞休憩島玩家的精彩創作與建築作品</p>
+            <div class="breadcrumb">
+                <a href="index.html">首頁</a>
+                <span>/</span>
+                <a href="#">作品展示</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品展示內容 -->
+    <div class="gallery-container">
+        <!-- 分類篩選器 -->
+        <section class="gallery-section">
+            <h2><i class="fas fa-filter"></i> 作品分類</h2>
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">全部作品</button>
+                <button class="filter-btn" data-filter="architecture">建築設計</button>
+                <button class="filter-btn" data-filter="redstone">紅石機械</button>
+                <button class="filter-btn" data-filter="landscape">景觀設計</button>
+                <button class="filter-btn" data-filter="interior">室內設計</button>
+                <button class="filter-btn" data-filter="pixelart">像素藝術</button>
+            </div>
+        </section>
+
+        <!-- 添加作品表單 -->
+        <section class="gallery-section">
+            <h2><i class="fas fa-plus-circle"></i> 分享您的作品</h2>
+            <p>填寫以下表單來展示您的創作</p>
+            
+            <div class="add-work-form">
+                <div class="form-group">
+                    <label for="work-title">作品名稱</label>
+                    <input type="text" id="work-title" placeholder="例如: 天空之城、現代別墅、自動農場等">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="work-category">作品類別</label>
+                        <select id="work-category">
+                            <option value="architecture">建築設計</option>
+                            <option value="redstone">紅石機械</option>
+                            <option value="landscape">景觀設計</option>
+                            <option value="interior">室內設計</option>
+                            <option value="pixelart">像素藝術</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="author-name">作者名稱</label>
+                        <input type="text" id="author-name" placeholder="您的遊戲ID">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="work-description">作品描述</label>
+                    <textarea id="work-description" placeholder="描述您的作品，例如: 這是一座融合現代與中世紀風格的城堡，使用了大量石英和深色木材..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="work-image">作品圖片 (URL)</label>
+                    <input type="text" id="work-image" placeholder="請提供圖片網址">
+                    <img id="image-preview" class="image-preview" alt="圖片預覽">
+                </div>
+                
+                <div class="form-actions">
+                    <button id="add-work-btn" class="btn btn-primary">分享作品</button>
+                    <button id="clear-form-btn" class="btn btn-outline">清除表單</button>
+                </div>
+                
+                <div class="note-box">
+                    <h3>分享指南</h3>
+                    <p>1. 請確保圖片清晰且為您自己的作品</p>
+                    <p>2. 作品描述請盡量詳細，讓其他玩家了解您的創作理念</p>
+                    <p>3. 請選擇合適的作品分類</p>
+                    <p>4. 管理團隊有權移除不適當的作品</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作品展示 -->
+        <section class="gallery-section">
+            <h2><i class="fas fa-images"></i> 作品展示</h2>
+            <p>欣賞休憩島玩家的精彩創作</p>
+            
+            <div id="works-container" class="gallery-grid">
+                <!-- 作品將在這裡動態顯示 -->
+                <div class="empty-state" id="empty-state">
+                    <i class="fas fa-image"></i>
+                    <h3>暫無作品</h3>
+                    <p>還沒有玩家分享作品，成為第一個分享者吧！</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>休憩島</h3>
+                    <p>一個專注於建築體驗的Minecraft伺服器，致力於為玩家打造方便且愉快的生存建築環境。</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.threads.net/@relaxation_island" class="social-link" target="_blank">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>快速連結</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">首頁</a></li>
+                        <li><a href="Community.html">社群準則</a></li>
+                        <li><a href="Instruction.html">指令教學</a></li>
+                        <li><a href="Staff.html">團隊成員</a></li>
+                        <li><a href="Shop.html">商店宣傳</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>伺服器資訊</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">伺服器狀態</a></li>
+                        <li><a href="#">規則與條款</a></li>
+                        <li><a href="#">常見問題</a></li>
+                        <li><a href="#">更新日誌</a></li>
+                        <li><a href="#">支援我們</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>聯絡我們</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> relaxation.island@example.com</li>
+                        <li><i class="fab fa-discord"></i> Discord 社群</li>
+                        <li><i class="fab fa-instagram"></i> @relaxation_island</li>
+                        <li><i class="fab fa-threads"></i> @relaxation_island</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 台灣</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 休憩島 Relaxation-island. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 漢堡選單功能
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // 滾動時導航欄效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '8px 0';
+            } else {
+                header.style.padding = '12px 0';
+            }
+        });
+
+        // 管理員功能
+        const ADMIN_PASSWORD = "nono05"; // 預設管理員密碼
+        let isAdmin = false;
+
+        // 初始化管理員登入按鈕
+        function initAdminLogin() {
+            const adminLoginContainer = document.getElementById('admin-login-container');
+            
+            // 檢查是否已登入
+            const savedAdminState = localStorage.getItem('isAdmin');
+            if (savedAdminState === 'true') {
+                isAdmin = true;
+                showAdminStatus();
+            } else {
+                showLoginButton();
+            }
+        }
+
+        // 顯示登入按鈕
+        function showLoginButton() {
+            const adminLoginContainer = document.getElementById('admin-login-container');
+            adminLoginContainer.innerHTML = `
+                <a href="#" class="admin-login-btn" id="admin-login-btn">
+                    <i class="fas fa-user-shield"></i> 管理員登入
+                </a>
+            `;
+            
+            document.getElementById('admin-login-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('admin-login-modal').style.display = 'flex';
+            });
+        }
+
+        // 顯示管理員狀態
+        function showAdminStatus() {
+            const adminLoginContainer = document.getElementById('admin-login-container');
+            adminLoginContainer.innerHTML = `
+                <div class="admin-status">
+                    <i class="fas fa-user-shield"></i> 管理員模式
+                </div>
+                <a href="#" class="admin-login-btn" id="admin-logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> 登出
+                </a>
+            `;
+            
+            document.getElementById('admin-logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                isAdmin = false;
+                localStorage.removeItem('isAdmin');
+                showLoginButton();
+                displayWorks(); // 重新顯示作品，移除刪除按鈕
+            });
+        }
+
+        // 模態框功能
+        document.querySelectorAll('.close-modal').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.getElementById('admin-login-modal').style.display = 'none';
+                document.getElementById('admin-password').value = '';
+            });
+        });
+
+        document.getElementById('admin-login-submit').addEventListener('click', function() {
+            const password = document.getElementById('admin-password').value;
+            if (password === ADMIN_PASSWORD) {
+                isAdmin = true;
+                localStorage.setItem('isAdmin', 'true');
+                document.getElementById('admin-login-modal').style.display = 'none';
+                document.getElementById('admin-password').value = '';
+                showAdminStatus();
+                displayWorks(); // 重新顯示作品，添加刪除按鈕
+            } else {
+                alert('密碼錯誤，請重新輸入！');
+                document.getElementById('admin-password').value = '';
+            }
+        });
+
+        // 點擊模態框外部關閉
+        document.getElementById('admin-login-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+                document.getElementById('admin-password').value = '';
+            }
+        });
+
+        // 作品展示功能
+        document.addEventListener('DOMContentLoaded', function() {
+            initAdminLogin();
+            
+            const addWorkBtn = document.getElementById('add-work-btn');
+            const clearFormBtn = document.getElementById('clear-form-btn');
+            const worksContainer = document.getElementById('works-container');
+            const emptyState = document.getElementById('empty-state');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const imageInput = document.getElementById('work-image');
+            const imagePreview = document.getElementById('image-preview');
+            
+            // 從本地存儲加載作品
+            let works = JSON.parse(localStorage.getItem('playerWorks')) || [];
+            
+            // 顯示作品
+            function displayWorks(filter = 'all') {
+                if (works.length === 0) {
+                    emptyState.style.display = 'block';
+                    worksContainer.innerHTML = '';
+                    worksContainer.appendChild(emptyState);
+                    return;
+                }
+                
+                emptyState.style.display = 'none';
+                worksContainer.innerHTML = '';
+                
+                // 篩選作品
+                const filteredWorks = filter === 'all' 
+                    ? works 
+                    : works.filter(work => work.category === filter);
+                
+                if (filteredWorks.length === 0) {
+                    const noResults = document.createElement('div');
+                    noResults.className = 'empty-state';
+                    noResults.innerHTML = `
+                        <i class="fas fa-search"></i>
+                        <h3>暫無此類作品</h3>
+                        <p>沒有找到符合此分類的作品</p>
+                    `;
+                    worksContainer.appendChild(noResults);
+                    return;
+                }
+                
+                // 添加每個作品
+                filteredWorks.forEach((work, index) => {
+                    const workElement = document.createElement('div');
+                    workElement.className = 'gallery-item';
+                    
+                    // 如果是管理員模式，添加刪除按鈕
+                    const deleteButton = isAdmin ? 
+                        `<button class="delete-btn" data-index="${index}"><i class="fas fa-trash"></i></button>` : '';
+                    
+                    workElement.innerHTML = `
+                        ${deleteButton}
+                        <img src="${work.image}" alt="${work.title}" class="gallery-image">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">${work.title}</h3>
+                            <p class="gallery-description">${work.description}</p>
+                            <div class="gallery-meta">
+                                <div class="gallery-author">
+                                    <i class="fas fa-user"></i> ${work.author}
+                                </div>
+                                <div class="gallery-category">${getCategoryName(work.category)}</div>
+                            </div>
+                        </div>
+                    `;
+                    worksContainer.appendChild(workElement);
+                });
+                
+                // 如果是管理員模式，添加刪除按鈕事件
+                if (isAdmin) {
+                    document.querySelectorAll('.delete-btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const index = parseInt(this.getAttribute('data-index'));
+                            if (confirm('確定要刪除此作品嗎？此操作無法復原。')) {
+                                deleteWork(index);
+                            }
+                        });
+                    });
+                }
+            }
+            
+            // 刪除作品
+            function deleteWork(index) {
+                works.splice(index, 1);
+                localStorage.setItem('playerWorks', JSON.stringify(works));
+                displayWorks();
+            }
+            
+            // 獲取分類名稱
+            function getCategoryName(category) {
+                const categories = {
+                    'architecture': '建築設計',
+                    'redstone': '紅石機械',
+                    'landscape': '景觀設計',
+                    'interior': '室內設計',
+                    'pixelart': '像素藝術'
+                };
+                return categories[category] || '其他';
+            }
+            
+            // 初始化顯示作品
+            displayWorks();
+            
+            // 分類篩選功能
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 移除所有按鈕的active類
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // 為當前按鈕添加active類
+                    this.classList.add('active');
+                    // 顯示篩選後的作品
+                    const filter = this.getAttribute('data-filter');
+                    displayWorks(filter);
+                });
+            });
+            
+            // 圖片預覽功能
+            imageInput.addEventListener('input', function() {
+                const imageUrl = this.value.trim();
+                if (imageUrl) {
+                    imagePreview.src = imageUrl;
+                    imagePreview.style.display = 'block';
+                } else {
+                    imagePreview.style.display = 'none';
+                }
+            });
+            
+            // 添加作品
+            addWorkBtn.addEventListener('click', function() {
+                const workTitle = document.getElementById('work-title').value.trim();
+                const workCategory = document.getElementById('work-category').value;
+                const authorName = document.getElementById('author-name').value.trim();
+                const workDescription = document.getElementById('work-description').value.trim();
+                const workImage = document.getElementById('work-image').value.trim();
+                
+                // 驗證表單
+                if (!workTitle || !authorName || !workDescription || !workImage) {
+                    alert('請填寫所有必填欄位');
+                    return;
+                }
+                
+                // 創建新作品
+                const newWork = {
+                    title: workTitle,
+                    category: workCategory,
+                    author: authorName,
+                    description: workDescription,
+                    image: workImage,
+                    date: new Date().toLocaleDateString()
+                };
+                
+                // 添加到作品列表
+                works.unshift(newWork);
+                
+                // 保存到本地存儲
+                localStorage.setItem('playerWorks', JSON.stringify(works));
+                
+                // 重新顯示作品
+                displayWorks();
+                
+                // 清除表單
+                clearForm();
+                
+                alert('作品已成功分享！');
+            });
+            
+            // 清除表單
+            clearFormBtn.addEventListener('click', clearForm);
+            
+            function clearForm() {
+                document.getElementById('work-title').value = '';
+                document.getElementById('work-category').value = 'architecture';
+                document.getElementById('author-name').value = '';
+                document.getElementById('work-description').value = '';
+                document.getElementById('work-image').value = '';
+                imagePreview.style.display = 'none';
+            }
+            
+            // 預先添加一些示例作品（僅在第一次加載時）
+            if (works.length === 0) {
+                const sampleWorks = [
+                    {
+                        title: "a",
+                        category: "a",
+                        author: "a",
+                        description: "a",
+                        image: "a",
+                        date: new Date().toLocaleDateString()
+                    },
+                ];
+                
+                works = sampleWorks;
+                localStorage.setItem('playerWorks', JSON.stringify(works));
+                displayWorks();
+            }
+        });
+    </script>
+</body>
+</html>

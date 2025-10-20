@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伺服器架構 Wiki | 休憩島</title>
+    <link rel="stylesheet" href="css/Instruction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="imagelogo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagelogo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imagelogo/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+
+</head>
+<body>
+<!-- 導航欄 -->
+<header>
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <i class="fas fa-island-tropical"></i>
+            休憩島
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="Community.html">社群準則</a></li>
+            <li><a href="Instruction.html">指令教學</a></li>
+            <li class="dropdown">
+                <a href="#">其他<i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="Staff.html"><i class="fas fa-crown"></i> 管理團隊</a>
+                    <a href="Support.html"><i class="fas fa-hand-holding-usd"></i> 贊助我們</a>
+                    <a href="Shop.html"><i class="fas fa-store"></i> 商店宣傳</a>
+                </div>
+            </li>
+            <li><a href="Gallery.html">作品展示</a></li>
+        </ul>
+        
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</header>
+
+    <!-- Wiki主視覺 -->
+    <section class="wiki-hero">
+        <div class="container">
+            <h1>▎伺服器架構 Wiki</h1>
+            <p>深入了解休憩島伺服器的技術架構與功能特色</p>
+        </div>
+    </section>
+
+    <!-- Wiki內容 -->
+    <div class="wiki-container">
+        <!-- 側邊欄目錄 -->
+        <div class="wiki-sidebar">
+            <h2>Wiki目錄</h2>
+            <ul class="wiki-nav">
+                <li><a href="#architecture" class="active">伺服器架構</a></li>
+                <li><a href="#version">版本資訊</a></li>
+                <li><a href="#world-features">世界功能</a></li>
+                <li><a href="#boss">BOSS戰鬥</a></li>
+                <li><a href="#related">相關頁面</a></li>
+            </ul>
+        </div>
+
+        <!-- 主要內容區域 -->
+        <div class="wiki-content">
+            <!-- 伺服器架構區塊 -->
+            <section id="architecture" class="wiki-section">
+                <h2><i class="fas fa-sitemap"></i> 伺服器架構</h2>
+                <p>為了方便管理，休憩島分為3個伺服器架構。</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>大廳伺服器</h3>
+                        <ul class="info-list">
+                            <li>玩家進入的大廳</li>
+                            <li>提供伺服器選擇介面</li>
+                            <li>包含基本小遊戲和社交區域</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>生存伺服器</h3>
+                        <ul class="info-list">
+                            <li>主要生存遊戲伺服器</li>
+                            <li>包含所有生存功能</li>
+                            <li>支援建築、經濟系統</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>代理伺服器</h3>
+                        <ul class="info-list">
+                            <li>Velocity 代理</li>
+                            <li>負責玩家連接</li>
+                            <li>皮膚處理功能</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 版本資訊區塊 -->
+            <section id="version" class="wiki-section">
+                <h2><i class="fas fa-info-circle"></i> 版本資訊</h2>
+                
+                <table class="wiki-table">
+                    <tr>
+                        <th>項目</th>
+                        <th>詳細資訊</th>
+                    </tr>
+                    <tr>
+                        <td>Minecraft版本</td>
+                        <td>1.21.7 或更高版本 (網站最後更新時間:10月19日)</td>
+                    </tr>
+                    <tr>
+                        <td>伺服器核心</td>
+                        <td>Paper/Velocity</td>
+                    </tr>
+                    <tr>
+                        <td>跨平台支援</td>
+                        <td>支援 Java 版和基岩版</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- 世界功能區塊 -->
+            <section id="world-features" class="wiki-section">
+                <h2><i class="fas fa-globe"></i> 世界功能</h2>
+                
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>真實季節</h4>
+                        <p>季節變化系統 (春、夏、秋、冬)</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>雙門系統</h4>
+                        <p>同時開關兩扇相鄰的門</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>連鎖採集</h4>
+                        <p>可連鎖砍樹和挖礦</p>
+                        <p><code>/sh</code> (開/關連鎖採集)</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>坐姿系統</h4>
+                        <p>可以坐在半磚、樓梯、其他玩家頭上</p>
+                        <p><code>/sit</code> (原地坐下)</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>生怪磚採集</h4>
+                        <p>使用絲綢之觸鎬子挖掘生怪磚</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>彈跳墊</h4>
+                        <p>特殊方塊提供彈跳功能</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>鐵砧染色</h4>
+                        <p>使用鐵砧為物品名稱添加顏色</p>
+                        <p>格式: <code>&4&l大劍劍</code> (紅色粗體)</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>物品展示</h4>
+                        <p>在聊天中展示手中物品</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>生物捕捉</h4>
+                        <p>捕捉蛋系統，可合成一次性或重複性</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>農業升級</h4>
+                        <p>不同工具的耕地效果和其他農業功能</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BOSS戰鬥區塊 -->
+            <section id="boss" class="wiki-section">
+                <h2><i class="fas fa-dragon"></i> BOSS 戰鬥</h2>
+                
+                <div class="info-card">
+                    <h3>終界龍獎勵</h3>
+                    <ul class="info-list">
+                        <li><strong>龍血量:</strong> 400</li>
+                        <li><strong>重生時間:</strong> 星期六日晚上8點</li>
+                        <li><strong>獎勵:</strong> 所有參與玩家均可獲得 2000 coins + 1000 XP</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 相關頁面區塊 -->
+            <section id="related" class="wiki-section">
+                <h2><i class="fas fa-link"></i> 相關頁面</h2>
+                
+                <div class="quick-links">
+                    <h3><i class="fas fa-book"></i> Wiki頁面列表</h3>
+                    <ul>
+                        <li><a href="in0.html"><i class="fas fa-chevron-right"></i> 休憩島伺服器功能 Wiki</a></li>
+                        <li><a href="in1.html"><i class="fas fa-chevron-right"></i> 驗證教學 | 初始進入伺服器進行驗證</a></li>
+                        <li><a href="in2.html"><i class="fas fa-chevron-right"></i> 指令教學 | 重要指令總覽-玩家常用指令</a></li>
+                        <li><a href="in3.html"><i class="fas fa-chevron-right"></i> 大廳功能 | 大廳伺服器功能</a></li>
+                        <li><a href="in4.html"><i class="fas fa-chevron-right"></i> 領地系統 | 領地建立與主要指令</a></li>
+                        <li><a href="in5.html"><i class="fas fa-chevron-right"></i> 家園功能 | 設定住宅與傳送</a></li>
+                        <li><a href="in6.html"><i class="fas fa-chevron-right"></i> 保護系統 | 箱子保護</a></li>
+                        <li><a href="in7.html"><i class="fas fa-chevron-right"></i> 經濟系統 | 生物掉錢概述</a></li>
+                        <li><a href="in8.html"><i class="fas fa-chevron-right"></i> 商店系統 | 商店功能概述</a></li>
+                        <li><a href="in9.html"><i class="fas fa-chevron-right"></i> 獎勵系統 | 簽到和獎勵機制</a></li>
+                        <li><a href="in10.html"><i class="fas fa-chevron-right"></i> 箱子商店 | 箱子商店概述</a></li>
+                        <li><a href="in11.html"><i class="fas fa-chevron-right"></i> 地圖創作 | 地圖創作簽名保護機制</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>休憩島</h3>
+                    <p>一個專注於建築體驗的Minecraft伺服器，致力於為玩家打造方便且愉快的生存建築環境。</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.threads.net/@relaxation_island" class="social-link" target="_blank">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>快速連結</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">首頁</a></li>
+                        <li><a href="Community.html">社群準則</a></li>
+                        <li><a href="Instruction.html">指令教學</a></li>
+                        <li><a href="wiki-architecture.html">伺服器架構 Wiki</a></li>
+                        <li><a href="Gallery.html">作品展示</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>伺服器資訊</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">伺服器狀態</a></li>
+                        <li><a href="#">規則與條款</a></li>
+                        <li><a href="#">常見問題</a></li>
+                        <li><a href="#">更新日誌</a></li>
+                        <li><a href="#">支援我們</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>聯絡我們</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> relaxation.island@example.com</li>
+                        <li><i class="fab fa-discord"></i> Discord 社群</li>
+                        <li><i class="fab fa-instagram"></i> @relaxation_island</li>
+                        <li><i class="fab fa-threads"></i> @relaxation_island</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 台灣</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 休憩島 Relaxation-island. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 漢堡選單功能
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // 滾動時導航欄效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // 側邊欄導航高亮
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.wiki-section');
+            const navLinks = document.querySelectorAll('.wiki-nav a');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
